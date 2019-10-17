@@ -26,8 +26,8 @@ The datasource for the elements is a json object whicht contains the general con
                     "location": "HL_DG_FRONT",
                     "additional_attr": [{ "key": "last service", "value": "14.10.2019" }],
                     "user_interactables": [
-                        { type: "button", "name": "COSE", "action_endpoint": "btn1close" },
-                        { type: "button", "name": "OPEN", "action_endpoint": "btn1open" }
+                        { "type": "button", "name": "COSE", "action_endpoint": "btn1close" },
+                        { "type": "button", "name": "OPEN", "action_endpoint": "btn1open" }
                     ],
                     "bg_color": "#cdd"
                 },
