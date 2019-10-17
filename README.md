@@ -49,3 +49,33 @@ The datasource for the elements is a json object whicht contains the general con
         }
 ```
 
+
+
+## FUNCTIONS
+
+There are some function you can use to insert,update instruments on the page:
+
+* `pv_scan_page_for_pv_instruments();` - scans the dom for instrument-divs. You have to do it once the page is loaded or after modification of the dom.
+
+* `pv_update_all_instruments();`- update all instruments according the data in `avariable_instruments`
+
+
+
+```js
+            //SCAN HTML FOR INSTRUMENT TAGS
+            pv_scan_page_for_pv_instruments();
+            //UPDATE avariable_instruments variable -- or use websockets
+            setInterval(() => {
+                $.getJSON(enpoint_url, function (data) { // fetch the config from server
+                    console.log(data);
+                    //CHECK FOR VALID JSON ARRAY
+                    if (data == null || !isArray(data)) {
+                        console.log(data);
+                        console.log("-- INVALID avariable_instruments.instrument_data ---");
+                    }
+                    //UPDATE ALL INSTRUMENTS
+                    avariable_instruments.instrument_data = data;
+                    pv_update_all_instruments();
+                });
+            }, 1000);
+```
