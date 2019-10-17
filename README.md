@@ -8,6 +8,9 @@
 ```html
 <div  data-pv="2556"></div>
 ```
+If you place this snipped in your HTML-Code, the instrument with the id 2556 will be rendered there.
+The id must match with the `id` in the `avariable_instruments.instrument_data[].id`.
+Its possible to place the same instrument, multible times on a page. Simply insert the div again.
 
 ### SAMPLE SENSOR DATA SOURCE
 The datasource for the elements is a json object whicht contains the general config and descriptor for each instrument to display. The global variable is called `avariable_instruments = `. There is a example configuration for two instruments below:
