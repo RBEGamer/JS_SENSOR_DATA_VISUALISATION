@@ -10,4 +10,41 @@
 ```
 
 ### SAMPLE SENSOR DATA SOURCE
-<img src='/documentation/sample_instrument_config.png' />
+
+```json
+
+var avariable_instruments = {
+            config_enpoint_base_url: "127.0.0.1/pv/",
+            config_icons_base_url: 'file:///Users/marcelochsendorf/Desktop/process_widget/src/pv_ressources/pv_icons/',
+            instrument_data: [
+                {
+                    visible_name: "HL PRESSURE",
+                    icon_file: "pressure.png",
+                    id: "2556",
+                    value: "7.5",
+                    unit: "Bar",
+                    location: "HL_DG_FRONT",
+                    additional_attr: [{ key: "last service", value: "14.10.2019" }],
+                    user_interactables: [
+                        { type: "button", name: "COSE", action_endpoint: "btn1close" },
+                        { type: "button", name: "OPEN", action_endpoint: "btn1open" }
+                    ],
+                    bg_color: "#cdd"
+                },
+                {
+                    visible_name: "DG FRONT TEMP",
+                    icon_file: "temp.png",
+                    id: "1337",
+                    value: "27.5",
+                    unit: "&deg;",
+                    location: "DG_FRONT",
+                    additional_attr: [{ key: "sensor type", value: "IRF2312" }],
+                    user_interactables: [],
+                    bg_color: "#ddc"
+                }
+            ]
+        }
+
+
+```
+
