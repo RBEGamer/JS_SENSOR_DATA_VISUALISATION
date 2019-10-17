@@ -17,15 +17,15 @@
 
 
     <!--ADD FOR EACH INSTRUMENT VISIBLE ON THE SITE data-pv="2556" CONTAINS THE ID-->
-    <div id="paw_widget" data-pv="2556"></div>
+    <div  data-pv="2556"></div>
 
-    <div id="paw_widget" data-pv="1337"></div>
-
-
+    <div data-pv="1337"></div>
 
 
 
-    
+
+
+
     <!--IMPORTANT TO ADD -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -211,21 +211,21 @@
 
 
         //SCAN HTML FOR INSTRUMENT TAGS
-        pv_scan_page_for_pv_instruments();
-        //UPDATE INSTRUMENTS -- or use websockets
-        setInterval(() => {
-            $.getJSON(enpoint_url, function (data) {
-                console.log(data);
-                //CHECK FOR VALID JSON ARRAY
-                if (data == null || !isArray(data)) {
+            pv_scan_page_for_pv_instruments();
+            //UPDATE INSTRUMENTS -- or use websockets
+            setInterval(() => {
+                $.getJSON(enpoint_url, function (data) {
                     console.log(data);
-                    console.log("-- INVALID avariable_instruments.instrument_data ---");
-                }
-                //UPDATE ALL INSTRUMENTS
-                avariable_instruments.instrument_data = data;
-                pv_update_all_instruments();
-            });
-        }, 1000);
+                    //CHECK FOR VALID JSON ARRAY
+                    if (data == null || !isArray(data)) {
+                        console.log(data);
+                        console.log("-- INVALID avariable_instruments.instrument_data ---");
+                    }
+                    //UPDATE ALL INSTRUMENTS
+                    avariable_instruments.instrument_data = data;
+                    pv_update_all_instruments();
+                });
+            }, 1000);
     
     </script>
 </body>
